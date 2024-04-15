@@ -255,8 +255,8 @@ class AVL {
                 rotateRight(pR->pRight);
                 rotateLeft(pR);
                 if (pR->bf == EH) { pR->pLeft->bf = pR->pRight->bf = EH; }
-                else if (pR->bf == RH) { pR->pLeft->bf = pR->bf = EH; pR->pRight->bf = LH; }
-                else { pR->pLeft->bf = pR->bf = EH; pR->pRight->bf = LH; }
+                else if (pR->bf == RH) { pR->pRight->bf = pR->bf = EH; pR->pLeft->bf = LH; }
+                else { pR->pLeft->bf = pR->bf = EH; pR->pRight->bf = RH; }
                 return false;
     }
     bool insert(Node* &pR, const T &val) {
